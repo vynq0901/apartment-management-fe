@@ -45,7 +45,12 @@ const Apartment = () => {
         }
        
     }
-    
+    const handleFilterChange = (event) => {
+        setFilter({
+            ...filter,
+            [event.target.name]: event.target.value
+        })
+    }
     const getAllAptAreas = async () => {
         try {
             const response = await aptAreaApi.getAll()
@@ -184,6 +189,33 @@ const Apartment = () => {
                 </div>
             </div>
         </div>
+        <div className='flex items-center mb-4'>
+
+           <div>
+                <select className='flex mr-8 rounded-md border-2 py-1 px-2 cursor-pointer' name="sortBy" onChange={handleFilterChange}>
+                    <option selected value="price">
+                        Giá
+                    </option>
+                    <option value="rooms">
+                        Phòng
+                    </option>
+                    <option value="area">
+                        Diện tích
+                    </option>
+                </select>
+           </div>
+           <div className='flex mr-8 rounded-md border-2 py-1 px-2 cursor-pointer' onChange={handleFilterChange}>
+                <select name="sortOrder">
+                    <option selected value="asc">
+                        Tăng dần
+                    </option>
+                    <option value="desc">
+                        Giảm dần
+                    </option>
+
+                </select>
+           </div>
+        </div>
         <div className='min-h-[300px]'>
         <table className="border-solid w-full">
                     <thead className="border-t-[1px] border-b-[1px]">
@@ -192,6 +224,7 @@ const Apartment = () => {
                             <th className="w-[150px] text-center">Số phòng</th>
                             <th className="w-[150px] text-center">Giá</th>
                             <th className="w-[150px] text-center">Khu vực</th>
+                            <th className="w-[150px] text-center">Tình trạng</th>
                             <th className="w-[150px] text-center"></th>
                         </tr>
                     </thead>
@@ -215,6 +248,14 @@ const Apartment = () => {
                                                 <td className='text-center'>
                                                     <p className="text-xs font-medium">{apt.apartment_areas?.name}</p>
                                                 </td>
+                                                {
+                                                    apt.status === 1 ? <td className='text-center'>
+                                                    <p className="text-xs font-medium">Còn trống</p>
+                                                    </td> :
+                                                <td className='text-center'>
+                                                    <p className="text-xs font-medium">Đã thuê</p>
+                                                </td>
+                                                }
                                                 <td className='text-center'>
                                                     <span className="inline-block mr-2 cursor-pointer" onClick={() => openViewModal(apt)}><AiFillEye className="inline-block"/></span>
                                                     <span className="inline-block mr-2 cursor-pointer" onClick={() => openEditModal(apt)}><BiPencil className="inline-block"/></span>
