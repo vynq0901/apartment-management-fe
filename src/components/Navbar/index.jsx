@@ -19,9 +19,7 @@ const Navbar = () => {
             </div>
             <div>
                 <ul className="flex items-center justify-center">
-                    <li className="ml-6 font-semibold">Trang chủ</li>
-                    <li className="ml-6 font-semibold">Nav 1</li>
-                    <li className="ml-6 font-semibold">Nav 2</li>
+                   
                     <li className="ml-6 font-semibold rounded-full border-black border-[2px] p-2">
                         <button className="font-semibold" onClick={handleLogout}>
                             Đăng xuất
