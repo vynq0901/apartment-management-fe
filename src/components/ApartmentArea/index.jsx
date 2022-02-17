@@ -106,12 +106,7 @@ const ApartmentArea = () => {
     <div className=" py-4 px-8 flex-1">
         <h1 className="font-bold text-2xl">Quản lý khu vực</h1>
         <div className="flex items-center justify-between">
-            <div className="flex items-center border-[1px] p-1 border-gray-300 w-1/3">
-                <div className="mr-1">
-                    <FiSearch className="font-bold" />
-                </div>
-                <input className="outline-none text-sm w-full"  />
-            </div>
+           
             <div className="flex justify-end items-center my-4">
                 <div className="flex items-center bg-yellow-500 p-1 border-2 border-transparent text-black rounded-md cursor-pointer hover:bg-white hover:text-black hover:border-yellow-500">
                     <FiPlus className="font-semibold mr-2 font-bold text-2xl" />
@@ -124,7 +119,7 @@ const ApartmentArea = () => {
                     <thead className="border-t-[1px] border-b-[1px]">
                         <tr className="text-left font-normal text-sm">
                             <th className="w-[150px] text-center">Tên khu vực</th>
-                            <th className="w-[150px] text-center">Floors</th>
+                            <th className="w-[150px] text-center">Số tầng</th>
                             <th className="w-[300px] text-center">Địa chỉ</th>
                           
                             <th className="w-[150px] text-center"></th>
@@ -148,7 +143,7 @@ const ApartmentArea = () => {
                                                     <p className="text-xs font-medium">{area.address}</p>
                                                 </td>
                                                 <td className='text-center'>
-                                                    <span className="inline-block mr-2 cursor-pointer" onClick={() => openViewModal(area)}><AiFillEye className="inline-block"/></span>
+                                                  
                                                     <span className="inline-block mr-2 cursor-pointer" onClick={() => openEditModal(area)}><BiPencil className="inline-block"/></span>
                                                     <span className="inline-block mr-2 cursor-pointer" onClick={() => openDeleteModal(area)}><BiTrash className="inline-block"/></span>
                                                 </td>
@@ -166,7 +161,7 @@ const ApartmentArea = () => {
                                                 <input className="text-sm p-1 border-[1px] rounded-md" name="name" onChange={handleAddChange} />
                                             </div>
                                             <div className="flex flex-col mb-4">
-                                                <label className="text-sm font-medium">Floors</label>
+                                                <label className="text-sm font-medium">Số tầng</label>
                                                 <input className="text-sm p-1 border-[1px] rounded-md" name="floors" onChange={handleAddChange} />
                                             </div>
                                             <div className="flex flex-col mb-4">
@@ -186,7 +181,7 @@ const ApartmentArea = () => {
                                             <input className="text-sm p-1 border-[1px] rounded-md" name="name" defaultValue={selectedArea.name} onChange={handleEditChange} />
                                         </div>
                                         <div className="flex flex-col mb-4">
-                                            <label className="text-sm font-medium">Floors</label>
+                                            <label className="text-sm font-medium">Số tầng</label>
                                             <input className="text-sm p-1 border-[1px] rounded-md" name="floors" defaultValue={selectedArea.floors} onChange={handleEditChange} />
                                         </div>
                                         <div className="flex flex-col mb-4">

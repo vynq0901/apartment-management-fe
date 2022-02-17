@@ -176,12 +176,7 @@ const Apartment = () => {
     <div className=" py-4 px-8 flex-1">
         <h1 className="font-bold text-2xl">Quản lý căn hộ</h1>
         <div className="flex items-center justify-between">
-            <div className="flex items-center border-[1px] p-1 border-gray-300 w-1/3">
-                <div className="mr-1">
-                    <FiSearch className="font-bold" />
-                </div>
-                <input className="outline-none text-sm w-full"  />
-            </div>
+            
             <div className="flex justify-end items-center my-4">
                 <div className="flex items-center bg-yellow-500 p-1 border-2 border-transparent text-black rounded-md cursor-pointer hover:bg-white hover:text-black hover:border-yellow-500">
                     <FiPlus className="font-semibold mr-2 font-bold text-2xl" />
@@ -220,6 +215,7 @@ const Apartment = () => {
         <table className="border-solid w-full">
                     <thead className="border-t-[1px] border-b-[1px]">
                         <tr className="text-left font-normal text-sm">
+                            <th className="w-[150px] text-center">Mã căn hộ</th>
                             <th className="w-[150px] text-center">Diện tích</th>
                             <th className="w-[150px] text-center">Số phòng</th>
                             <th className="w-[150px] text-center">Giá</th>
@@ -235,7 +231,9 @@ const Apartment = () => {
                             apts.map(apt => {
                             return      <tr className="mb-2 border-b-[1px]" key={apt.id}>
                                                
-                                               
+                                               <td className='text-center'>
+                                                    <p className="text-xs font-medium">{apt.id}</p>
+                                                </td>
                                                 <td className='text-center'>
                                                     <p className="text-xs font-medium">{apt.area}</p>
                                                 </td>
@@ -257,7 +255,7 @@ const Apartment = () => {
                                                 </td>
                                                 }
                                                 <td className='text-center'>
-                                                    <span className="inline-block mr-2 cursor-pointer" onClick={() => openViewModal(apt)}><AiFillEye className="inline-block"/></span>
+                                                  
                                                     <span className="inline-block mr-2 cursor-pointer" onClick={() => openEditModal(apt)}><BiPencil className="inline-block"/></span>
                                                     <span className="inline-block mr-2 cursor-pointer" onClick={() => openDeleteModal(apt)}><BiTrash className="inline-block"/></span>
                                                 </td>

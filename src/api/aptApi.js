@@ -16,7 +16,11 @@ const aptApi = {
     deleteApt: (id) => {
         const url = `/apartment/${id}/delete`
         return axiosClient.delete(url)
-    } 
+    },
+    getApt: (id) => {
+        const url = `/apartment/${id}`
+        return axiosClient.get(url)
+    }
     
 }
 

@@ -16,7 +16,11 @@ const residentApi = {
     deleteResident: (id) => {
         const url = `/resident/${id}/delete`
         return axiosClient.delete(url)
-    } 
+    },
+    getResident: (id) => {
+        const url = `/resident/${id}`
+        return axiosClient.get(url)
+    }
     
 }
 

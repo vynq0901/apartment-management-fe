@@ -136,14 +136,9 @@ const Resident = () => {
 
   return(
     <div className=" py-4 px-8 flex-1">
-        <h1 className="font-bold text-2xl">Quản lý khu vực</h1>
+        <h1 className="font-bold text-2xl">Quản lý cư dân</h1>
         <div className="flex items-center justify-between">
-            <div className="flex items-center border-[1px] p-1 border-gray-300 w-1/3">
-                <div className="mr-1">
-                    <FiSearch className="font-bold" />
-                </div>
-                <input className="outline-none text-sm w-full"  />
-            </div>
+            
             <div className="flex justify-end items-center my-4">
                 <div className="flex items-center bg-yellow-500 p-1 border-2 border-transparent text-black rounded-md cursor-pointer hover:bg-white hover:text-black hover:border-yellow-500">
                     <FiPlus className="font-semibold mr-2 font-bold text-2xl" />
