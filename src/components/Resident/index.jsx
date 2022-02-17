@@ -203,10 +203,7 @@ const Resident = () => {
                                                 <label className="text-sm font-medium">Tên</label>
                                                 <input className="text-sm p-1 border-[1px] rounded-md" name="first_name" onChange={handleAddChange} />
                                             </div>
-                                            <div className="flex flex-col mb-4">
-                                                <label className="text-sm font-medium">Địa chỉ</label>
-                                                <input className="text-sm p-1 border-[1px] rounded-md" name="address" onChange={handleAddChange} />
-                                            </div>
+                                           
                                             <div className="flex flex-col mb-4">
                                                 <label className="text-sm font-medium">Ngày sinh</label>
                                                 <input type="date" className="text-sm p-1 border-[1px] rounded-md" name="birthday" onChange={handleAddChange} />
@@ -214,7 +211,7 @@ const Resident = () => {
                                             <div className="flex flex-col mb-4">
                                                 <label className="text-sm font-medium">Giới tính</label>
                                                
-                                                <select className='flex mr-8 rounded-md border-2 py-1 px-2 cursor-pointer' name="gender" onChange={handleAddChange}>
+                                                <select defaultValue="nam" className='flex mr-8 rounded-md border-2 py-1 px-2 cursor-pointer' name="gender" onChange={handleAddChange}>
                                                     <option selected value="nam">
                                                         Nam
                                                     </option>
@@ -253,10 +250,7 @@ const Resident = () => {
                                             <label className="text-sm font-medium">Tên</label>
                                             <input className="text-sm p-1 border-[1px] rounded-md" name="first_name" defaultValue={selectedResident.first_name} onChange={handleEditChange} />
                                         </div>
-                                        <div className="flex flex-col mb-4">
-                                            <label className="text-sm font-medium">Địa chỉ</label>
-                                            <input className="text-sm p-1 border-[1px] rounded-md" name="address" defaultValue={selectedResident.address} onChange={handleEditChange} />
-                                        </div>
+                                      
                                         <div className="flex flex-col mb-4">
                                             <label className="text-sm font-medium">Số điện thoại</label>
                                             <input className="text-sm p-1 border-[1px] rounded-md" name="phone_number" defaultValue={selectedResident.phone_number} onChange={handleEditChange} />
@@ -304,7 +298,7 @@ const Resident = () => {
                                                 </div>
                                                 <div>
                                                     <label className='font-semibold'>Số điện thoại</label>
-                                                    <p>{selectedResident.phone}</p>
+                                                    <p>{selectedResident.phone_number}</p>
                                                 </div>
                                                 <div>
                                                     <label className='font-semibold'>Số căn cước</label>
